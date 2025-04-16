@@ -67,3 +67,7 @@ This library aims to provide a set of reusable UI components for the RAG applica
 *   **Source Visualization Component:** A component for displaying the sources of answers.
 *   **Performance Metrics Component:** A component for displaying performance metrics.
 *   **Navigation and Layout Components:** Components for navigation and layout.
+
+## Development Notes
+
+A potential issue arises when using `react-markdown` with Tailwind CSS. By default, Tailwind CSS removes the default styles for list elements if no styles are defined. This can lead to unstyled lists when using `react-markdown`, as it defines lists without specific styles. A workaround is to redefine the styles for list tags using Tailwind CSS classes within the components that render lists.
