@@ -1,54 +1,69 @@
-# React + TypeScript + Vite
+# React UI Component Library for RAG Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
 
-Currently, two official plugins are available:
+This project is a React UI component library designed for a Retrieval-Augmented Generation (RAG) application. The application allows users to intelligently leverage their document repositories locally, without exposing sensitive data to the internet. It processes documents, indexes them into a vector knowledge base, and provides access through an intuitive user interface. The backend is built with Python (FastAPI), while this library provides the frontend UI components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
 
-## Expanding the ESLint configuration
+*   **React 18+:** A JavaScript framework for building user interfaces.
+*   **TypeScript:** A typed superset of JavaScript that enhances code quality and maintainability.
+*   **Vite:** A fast build tool and development server for modern web projects.
+*   **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
+*   **Storybook:** A tool for developing and documenting UI components in isolation.
+*   **React Hook Form:** For form management.
+*   **react-markdown & react-syntax-highlighter:** For displaying chat messages with Markdown formatting and syntax highlighting.
+*   **React Testing Library:** For testing the UI components.
+*   **Axios or React Query:** For API communication.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Installation and Usage
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1.  **Clone the repository:**
+
+    ```bash
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Start the Storybook development server:**
+
+    ```bash
+    npm run storybook
+    ```
+
+    This will open Storybook in your browser, where you can explore the available components and their documentation.
+
+## Project Structure
+
+```
+├── .storybook/         # Storybook configuration
+├── docs/               # Project documentation
+├── src/                # Source code
+│   ├── assets/         # Static assets
+│   ├── components/     # Reusable UI components
+│   ├── stories/        # Storybook stories for components
+│   ├── App.tsx         # Main application component
+│   ├── index.tsx       # Entry point
+│   └── ...
+├── public/             # Static assets
+├── README.md           # This file
+├── package.json        # Project dependencies and scripts
+├── tsconfig.json       # TypeScript configuration
+└── vite.config.ts      # Vite configuration
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## UI Components
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This library aims to provide a set of reusable UI components for the RAG application. The following components are planned:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+*   **Chat Component:** An interactive chat interface with message history and Markdown formatting.
+*   **Document Upload Component:** An interface for uploading and managing documents.
+*   **Source Visualization Component:** A component for displaying the sources of answers.
+*   **Performance Metrics Component:** A component for displaying performance metrics.
+*   **Navigation and Layout Components:** Components for navigation and layout.
